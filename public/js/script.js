@@ -5,20 +5,29 @@ require.config({
 require(['event'], function (event){
 	
 	var doc = document,
-		ul = doc.querySelector('ul'),
-		list = doc.querySelectorAll('li');
+		ul = $('ul')[0],
+		bin = $('button.bin')[0],
+		debin = $('button.debin')[0],
+		delbin = $('button.delbin')[0],
+		list = $('li');
 
-	event.addEvent(ul, 'click', function(e){
-		var target = event.getTarget(e);
-		alert(target.tagName);
+	var	dom = doc.getElementById('id');
+
+	
+	event.on(bin, 'click', function(e){
+		event.on(ul, 'click.myclick', function(e){
+			alert(e.target.tagName);
+			e.preventDefault();
+		});
 	});
 
-	event.addEvent(list[0], 'click', function(e){
-		e = event.getEvent(e);
-		var target = event.getTarget(e);
-		alert(target.tagName);
-		event.stopPropagation(e);
-		event.preventDefault(e);
+	event.on(debin, 'click', function(e){
+		event.off(ul);
 	});
+
+	event.on(delbin, 'click', function(e){
+		doc.body.removeChild(ul);
+	});
+
 
 });
