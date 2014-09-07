@@ -10,3 +10,14 @@ ul, li, a, span {
     border: 1px solid #ccc;
     display: block;
 }
+
+h1 {
+	font-size:5em;
+	color: #000;
+	margin: 10px;
+	padding: 10px 15px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	position: relative;
+	left: 10px;
+}

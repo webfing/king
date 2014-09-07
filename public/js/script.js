@@ -2,10 +2,11 @@ require.config({
 	baseUrl: "/king"
 });
 
-require(['event'], function (event){
+require(['event', 'css'], function (event, css){
 	
 	var doc = document,
 		ul = $('ul')[0],
+		title = $("#id")[0],
 		bin = $('button.bin')[0],
 		debin = $('button.debin')[0],
 		delbin = $('button.delbin')[0],
@@ -15,8 +16,9 @@ require(['event'], function (event){
 
 	
 	event.on(bin, 'click', function(e){
-		event.on(ul, 'click.myclick', function(e){
+		event.on(ul, 'click.myclick', 'li', function(e){
 			alert(e.target.tagName);
+			alert(this.tagName);
 			e.preventDefault();
 		});
 	});
@@ -29,5 +31,7 @@ require(['event'], function (event){
 		doc.body.removeChild(ul);
 	});
 
+
+	//alert(css.support('box-sizing'));
 
 });
