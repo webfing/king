@@ -72,7 +72,7 @@ define(['util'], function(util){
 		并处理事件对象e的兼容
 		 */
 		var newHandler = function(e){
-			e = _getEvent(e);
+			e = _fixEvent(e);
 			handler.call(elem, e);
 		};
 		newHandler.id = id;
@@ -189,6 +189,7 @@ define(['util'], function(util){
 				e.cancelBubble = true;
 			}
 		}
+		return e;
 	}
 
 	function _preventDefault (e){
@@ -214,7 +215,7 @@ define(['util'], function(util){
 			}
 
 			var newHandler = function(e){
-				e = _getEvent(e);
+				e = _fixEvent(e);
 				var target = e.target;
 				while(target.tagName.toUpperCase() != childNode){
 					if (target==elem) return;
