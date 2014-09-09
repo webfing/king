@@ -12,6 +12,23 @@ define(['util'], function(util){
 
 	function setCss(elem, key, value){
 
+		var inlineStyle = elem.style;
+		if (typeof key == 'object'){
+			for (var i in key){
+				_set(i, key[i]);
+			}
+		}else{
+			_set(key, value);
+		}
+
+		function _set(k, v){
+			k = _cameCase(k);
+			inlineStyle[k] = v;
+		}
+	}
+
+	function transunit(){
+		
 	}
 
 	var support = (function(){

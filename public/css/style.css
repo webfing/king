@@ -12,12 +12,22 @@ ul, li, a, span {
 }
 
 h1 {
-	font-size:5em;
+	font-size:2em;
 	color: #000;
-	margin: 10px;
+	margin-left: 2em;
 	padding: 10px 15px;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	position: relative;
 	left: 10px;
+}
+
+.wrap {
+	font-size: 40px;
+}
+
+.myclass {
+	width: 20em;
+	height:20em;
+	background:#eee;
 }

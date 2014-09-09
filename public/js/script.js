@@ -28,10 +28,12 @@ require(['event', 'css'], function (event, css){
 	});
 
 	event.on(delbin, 'click', function(e){
-		doc.body.removeChild(ul);
+		css.set(title, 'font-size', '5em');
+		alert(css.get(title, 'font-size'));
 	});
 
 
-	//alert(css.support('box-sizing'));
+	alert(css.get(title, 'font-size'));
+	window.myTitle = title;
 
 });
