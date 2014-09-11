@@ -2,9 +2,10 @@ require.config({
 	baseUrl: "/king"
 });
 
-require(['event'], function (event){
+require(['event', 'css'], function (event, css){
 	
 	var doc = document,
+		title = doc.getElementById('id'),
 		ul = $('ul')[0],
 		bin = $('button.bin')[0],
 		debin = $('button.debin')[0],
@@ -28,6 +29,10 @@ require(['event'], function (event){
 	event.on(delbin, 'click', function(e){
 		doc.body.removeChild(ul);
 	});
+
+	//alert(css.get(title, 'font-size'));
+	/*var computedStyle = title.currentStyle;
+	alert(computedStyle.getPropertyValue);*/
 
 
 });
