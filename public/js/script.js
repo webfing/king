@@ -33,10 +33,10 @@ require(['event', 'css'], function (event, css){
 		alert(css.get(title, 'font-size'));
 	});
 
-	//alert(css.get(title, 'font-size'));
-	/*var computedStyle = title.currentStyle;
-	alert(computedStyle.getPropertyValue);*/
-
+	alert(css.get(title, 'width'));
+	alert($("#id").css('width'));
+	//alert(css.support('box-sizing'));
+	window.myTitle = title;
 
 	alert(css.get(title, 'font-size'));
 	window.myTitle = title;

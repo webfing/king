@@ -132,5 +132,3 @@ function checkPot(pot){
     }
     return true;
 }
-
-

@@ -3,11 +3,18 @@ define(['util'], function(util){
 	
 	function getCss(elem, key){
 		var computed,
+			unitReg = /(em|%)/gi,
 			style;
 		computed = _getComputedStyle(elem);
 		camekey = _cameCase(key);
 		style = computed.getPropertyValue? computed.getPropertyValue(key): computed[camekey];
-		return style;
+		if (unitReg.test(style)){
+			if (camekey == 'fontSize'){
+				return _transunit(elem, 1);
+			}
+			return _transunit(elem, parseFloat(style));
+		}
+		return parseFloat(style);
 	} 
 
 	function setCss(elem, key, value){
@@ -27,7 +34,18 @@ define(['util'], function(util){
 		}
 	}
 
-	function transunit(){
+	function _transunit(elem, relVal){
+		var computedLeft = elem.currentStyle.left;
+		var styleLeft = elem.style.left;
+		elem.runtimeStyle.left = computedLeft;
+		elem.style.left = relVal+'em';
+		var absVal = elem.style.pixelLeft;
+		elem.style.left = styleLeft;
+		elem.runtimeStyle.left = '';
+		return absVal;
+	}
+
+	function _fixunit(){
 		
 	}
 
