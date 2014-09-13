@@ -10,3 +10,24 @@ ul, li, a, span {
     border: 1px solid #ccc;
     display: block;
 }
+
+h1 {
+	font-size:2em;
+	color: #000;
+	margin-left: 2em;
+	padding: 10px 15px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	position: relative;
+	left: 10px;
+}
+
+.wrap {
+	font-size: 40px;
+}
+
+.myclass {
+	width: 20em;
+	height:20em;
+	background:#eee;
+}
