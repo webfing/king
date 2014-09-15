@@ -33,12 +33,9 @@ require(['event', 'css'], function (event, css){
 		alert(css.get(title, 'font-size'));
 	});
 
-	alert(css.get(title, 'width'));
-	alert($("#id").css('width'));
-	//alert(css.support('box-sizing'));
-	window.myTitle = title;
-
-	alert(css.get(title, 'font-size'));
+	//alert('my:'+css.get(title, 'border-radius'));
+	//alert('$:'+$("#id").css('border-radius'));
+	//console.log($("#id").width());
 	window.myTitle = title;
 
 });
