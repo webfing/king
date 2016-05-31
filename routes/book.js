@@ -9,5 +9,8 @@ router.get('/book', function(req, res) {
 router.get('/book/del', function(req, res){
 	res.redner('book', { title: 'book'});
 });
+router.get('/book/add', function(req, res){
+	res.render('book', {title: 'book'});
+});
 
 module.exports = router;
