@@ -10,4 +10,8 @@ router.get('/test', function(req, res) {
   res.render('test', { title: 'Express' });
 });
 
+router.get('404', function(req, res){
+	res.render('404', {title: '404'});
+});
+
 module.exports = router;
