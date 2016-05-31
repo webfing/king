@@ -10,4 +10,8 @@ router.get('/test', function(req, res) {
   res.render('test', { title: 'Express' });
 });
 
+router.get('502', function(req, res){
+	res.render('502', { title: '502'});
+});
+
 module.exports = router;
